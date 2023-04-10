@@ -1,2 +1,2 @@
-# login-crud
-login-crud
+# Django-crud
+Django-crud
