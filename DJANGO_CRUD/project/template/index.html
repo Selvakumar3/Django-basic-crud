@@ -1,0 +1,76 @@
+<html>
+    <head>
+        {% load static %}
+
+        <title> Registeration form </title>
+        <style>
+
+            table {border:0.5px solid black;
+                background-color:#96D4D4;
+                border-radius:1px;}
+            h1 {text-align: center;}
+
+            h2 {text-align: center;
+                font-family:courier;}  
+
+            </style>
+            </head>
+            <body style="background-color:lightgrey;">
+            <center>
+                <img src ="static/img/logo.jpg" alt ="myimage" width="30%" height="30%">
+
+                 <h1 style="font-size:200%;"> Employee Details </h1>
+
+                 <h2 style="font-size:150%;"font-family:courier;> registeration here </h2>
+                
+                 <table>
+                     <form action="{% url 'create' %}" method="POST">
+                     {% csrf_token %}
+                    <tr>
+                        <td> Name </td>
+                        <td> <input type="text" name="name" required> </td>
+                    </tr>
+                    <tr>
+                        <td> Age </td>
+                    <td><input type="date" name="age"></td>
+                    </tr>
+                    <tr>
+                        <td> Gender </td>
+                        <td>
+                            <input type="radio" name="gender" value="Male">
+                            <label for="male">male</label>
+                            <input type="radio" name="gender" value="Female">
+                            <label for="female">female</label>
+                            <input type="radio"name="gender" value="Others">
+                            <label for="others">others</label>
+                        </td>
+                    <tr>
+                        <td> DEGREE </td>
+                        <td>
+                            <select id="degree" name="degree">
+                                <option style="background-color: #888;" selected>Select</option>
+                                <option value="B.A">B.A. (Bachelor of Arts)</option>
+                                <option value="B.COM">B.Com. (Bachelor of Commerce)</option>
+                                <option value="B.SC">B.Sc. (Bachelor of Science)</option>
+                                <option value="B.E">B.E.(Bachelor of Engineering)</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Address </td>
+                        <td> <textarea name='address' required> </textarea></td>
+                    </tr>
+                    <tr>
+                        <td> Image </td>
+                        <td>
+                            <input type="File"  name="image" >
+                        </td>
+                    </tr>  
+                    <tr>
+                        <center><td><input type="submit" value = "Register"></td></center>
+                    </tr>
+                </form>
+            </table>
+        </center>
+</body>
+</html>
